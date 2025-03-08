@@ -1,23 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rock paper scissor game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rook Scissors Paper Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rock - Paper - Scissor</h1>
-    <div id="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissor">Scissor</button>
-    </div>
-    <div class="result">
-        <h2 id="result"></h2>
-        <ul id="history"></ul>
-    </div>
-    <script src="script.js"></script>
+  <div class="game-background">
 
+<a href=""><button onclick="let computerChoice = genrateComputerChoice();
+  console.log('you have choses Rook');
+  let resultMsg = getResult('Rook',computerChoice);
+  showResult('Rook', computerChoice, resultMsg);"
+  style="border-radius: 50%;"><img src="rook.jpeg" alt="" 
+  style="height: 250px; width:250px; border-radius: 50%; box-shadow: 4px 6px 10px rgb(255, 31, 206);"></button>
+ </a>
+
+
+<a href=""><button onclick="computerChoice = genrateComputerChoice();
+  console.log('you have choses Scissers');
+  resultMsg = getResult('Scissers',computerChoice);
+  showResult('Scissers', computerChoice, resultMsg);" 
+   style="border-radius: 50%;"><img src="sejer.jpeg" alt="" 
+  style="height: 250px; width:250px; border-radius: 50%; box-shadow: 4px 6px 10px yellow;"></button>
+</a>
+<a href=""><button onclick="computerChoice = genrateComputerChoice();
+  console.log('you have choses Paper');
+  resultMsg = getResult('Paper',computerChoice);
+  showResult('Paper', computerChoice, resultMsg);"
+  style="border-radius: 50%;"><img src="paper.jpeg" alt="" 
+  style="height: 250px; width:250px; border-radius: 50%; box-shadow: 4px 6px 10px rgb(0, 140, 255);"></button>
+</a>
+  </div>
+    
+<script>
+  function genrateComputerChoice() {
+    let randomNum = Math.random() * 3;
+    let choice;
+  if(randomNum > 0 && randomNum <= 1) {
+  return 'Rook';
+  } else if (randomNum > 1 && randomNum <= 2){
+   return 'Scissers';
+  } else {
+    return 'Paper'; 
+  }
+}
+
+function getResult(userMove, computerMove) {
+if (userMove === 'Rook') {
+  if (computerMove === 'Scissers') {
+    return 'user Win';
+  } else if (computerMove === 'Rook') {
+    return 'Tie';
+  } else if (computerMove === 'Paper') {
+    return 'computer win';
+  }
+
+} else if (userMove === 'Scissers') {
+  if (computerMove === 'Scissers') {
+    return 'Tie';
+  } else if (computerMove === 'Rook') {
+    return 'Compter Win';
+  } else if (computerMove === 'Paper') 
+    return 'User Win';
+} else {
+  if (computerMove === 'Scissers') {
+    return 'compter win';
+  } else if (computerMove === 'Rook') {
+    return 'user win';
+  } else if (computerMove === 'Paper') {
+    return 'Tie';
+  } 
+}
+}
+function showResult(userMove, computerMove, result) {
+  alert(` You Have Choice ${userMove} Computer Choice Is ${computerMove} And ${result}`);
+}
+</script>
+    
 </body>
 </html>

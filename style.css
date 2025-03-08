@@ -1,0 +1,28 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  
+}
+.game-background{
+  background-image: url(back09.jpeg);
+  background-size: full;
+  background-repeat: round;
+  height: 720px;
+  width: 100%;
+  display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+padding-top: 70px;
+padding-right: 100px;
+
+}
+.game-background a button:hover{
+  cursor: pointer;
+  box-shadow: 4px 6px 20px rgb(255, 255, 255);
+}
+.game-background a button:active{
+  box-shadow: 4px 6px 20px rgb(0, 253, 0);
+}
